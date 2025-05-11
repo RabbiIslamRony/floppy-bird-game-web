@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "A Flappy Bird clone using Webpack and JavaScript",
   "main": "src/index.js",
+  "engines": {
+    "node": ">=22.0.0"
+  },
   "scripts": {
     "start": "webpack serve --open",
     "build": "webpack --mode production",
