@@ -13,24 +13,31 @@ export class Pipe {
         this.passed = false;
         this.image = new Image();
         this.image.src = pipeImage;
+        
+        // Ensure image is loaded before starting
+        this.image.onload = () => {
+            this.draw();
+        };
     }
 
     draw() {
-        // Draw top pipe
-        this.ctx.save();
-        this.ctx.translate(this.x, this.gapPosition);
-        this.ctx.scale(1, -1);
-        this.ctx.drawImage(this.image, 0, 0, this.width, this.height);
-        this.ctx.restore();
+        if (this.image.complete) {
+            // Draw top pipe
+            this.ctx.save();
+            this.ctx.translate(this.x, this.gapPosition);
+            this.ctx.scale(1, -1);
+            this.ctx.drawImage(this.image, 0, 0, this.width, this.height);
+            this.ctx.restore();
 
-        // Draw bottom pipe
-        this.ctx.drawImage(
-            this.image,
-            this.x,
-            this.gapPosition + this.gap,
-            this.width,
-            this.height
-        );
+            // Draw bottom pipe
+            this.ctx.drawImage(
+                this.image,
+                this.x,
+                this.gapPosition + this.gap,
+                this.width,
+                this.height
+            );
+        }
     }
 
     update() {

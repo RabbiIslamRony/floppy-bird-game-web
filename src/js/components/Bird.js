@@ -12,10 +12,17 @@ export class Bird {
         this.height = GAME_CONFIG.BIRD_HEIGHT;
         this.image = new Image();
         this.image.src = birdImage;
+        
+        // Ensure image is loaded before starting
+        this.image.onload = () => {
+            this.draw();
+        };
     }
 
     draw() {
-        this.ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
+        if (this.image.complete) {
+            this.ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
+        }
     }
 
     update() {

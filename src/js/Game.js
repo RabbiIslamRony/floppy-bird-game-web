@@ -50,7 +50,9 @@ export class Game {
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
         // Draw background
-        this.ctx.drawImage(this.background, 0, 0, this.canvas.width, this.canvas.height);
+        if (this.background.complete) {
+            this.ctx.drawImage(this.background, 0, 0, this.canvas.width, this.canvas.height);
+        }
 
         // Spawn pipes
         if (timestamp - this.lastPipeSpawn > GAME_CONFIG.PIPE_SPAWN_INTERVAL) {
@@ -83,13 +85,15 @@ export class Game {
         this.bird.draw();
 
         // Draw ground
-        this.ctx.drawImage(
-            this.ground,
-            0,
-            this.canvas.height - GAME_CONFIG.GROUND_HEIGHT,
-            this.canvas.width,
-            GAME_CONFIG.GROUND_HEIGHT
-        );
+        if (this.ground.complete) {
+            this.ctx.drawImage(
+                this.ground,
+                0,
+                this.canvas.height - GAME_CONFIG.GROUND_HEIGHT,
+                this.canvas.width,
+                GAME_CONFIG.GROUND_HEIGHT
+            );
+        }
 
         requestAnimationFrame(this.gameLoop.bind(this));
     }
