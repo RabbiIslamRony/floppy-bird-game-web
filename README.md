@@ -25,7 +25,7 @@ A modern implementation of the classic Flappy Bird game using JavaScript, Webpac
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/rabbiislamrony/flappy-bird-game.git
+git clone https://github.com/RabbiIslamRony/floppy-bird-game-web
 cd flappy-bird-game
 ```
 
@@ -115,4 +115,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 Rabbi Islam Rony - [@rabbiislamrony](https://github.com/rabbiislamrony)
 
-Project Link: [https://github.com/rabbiislamrony/flappy-bird-game](https://github.com/rabbiislamrony/flappy-bird-game) 
+Project Link: [https://github.com/RabbiIslamRony/floppy-bird-game-web](https://github.com/RabbiIslamRony/floppy-bird-game-web) 
