@@ -1,0 +1,26 @@
+{
+  "name": "floppy-bird-game",
+  "version": "1.0.0",
+  "description": "A Flappy Bird clone using Webpack and JavaScript",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "webpack serve --open",
+    "build": "webpack --mode production",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["game", "flappy-bird", "javascript", "webpack"],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1",
+    "html-webpack-plugin": "^5.5.3",
+    "css-loader": "^6.8.1",
+    "style-loader": "^3.3.3",
+    "tailwindcss": "^3.3.5",
+    "postcss": "^8.4.31",
+    "postcss-loader": "^7.3.3",
+    "autoprefixer": "^10.4.16"
+  }
+}
